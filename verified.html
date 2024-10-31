@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .nav {
+        position: absolute;
+        top: 25px;
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .nav a {
+        color: #fff;
+        font-style: normal;
+      }
+
+      .left-nav {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .left-nav a {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .right-nav {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex: 1;
+        column-gap: 30px;
+        padding-right: 20px;
+      }
+
+      .right-nav a {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+      }
+
+      .search input {
+        width: 233px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      .search img {
+        vertical-align: middle;
+      }
+
+      .right-nav input::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        color: #fff;
+      }
+
+      .logo-wrapper {
+        height: 100%;
+        width: 396px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        background-color: #0355ce;
+        display: flex;
+        padding-right: 30px;
+        justify-content: end;
+        align-items: center;
+        margin-right: 40px;
+      }
+
+      .logo {
+        width: 123px;
+        height: 45px;
+      }
+
+      .language {
+        display: block;
+        font-size: 16px;
+        color: #d9d9d9 !important;
+      }
+
+      .language img {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .nav {
+        top: 0;
+        height: 121px;
+        background: linear-gradient(206deg, #0355ce 8.59%, #1eb4e3 87.75%);
+      }
+
+      .logo-wrapper {
+        width: 240px;
+        height: 70px;
+      }
+
+      .user {
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+        position: relative;
+      }
+
+      .user:hover {
+        cursor: pointer;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: url(./images/avatar.jpg) center center/cover no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .home-ref {
+        position: absolute;
+        border-radius: 5px;
+        background: #248ef9;
+        min-width: 189px;
+        top: 50px;
+        right: 0;
+        display: none;
+      }
+
+      .language-opt,
+      .language-opt-pc {
+        display: none;
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        transform: translateY(-100%);
+        border-radius: 25px;
+        background: #248ef9;
+        width: max-content;
+        /* shadow2 */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .language-opt li,
+      .language-opt-pc li {
+        padding: 10px 0;
+        margin: 0 10px;
+        color: #fff;
+
+        /* mobile-text3 */
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+
+      .language-opt li:first-child,
+      .language-opt-pc li:first-child {
+        border-bottom: 1px dotted #fff;
+      }
+
+      .language-opt img,
+      .language-opt-pc img {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      .language-opt-pc {
+        top: 158px;
+        right: 15px;
+      }
+
+      .ref-mb {
+        position: absolute;
+        top: 80px;
+        border-radius: 25px;
+        background: #248ef9;
+
+        /* shadow2 */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        display: none;
+      }
+
+      .ref-mb li {
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px 0;
+        margin: 0 15px;
+        text-align: right;
+        border-bottom: 1px dotted #fff;
+      }
+
+      .ref-mb li.active {
+        color: #000;
+      }
+
+      .menu-mb {
+        width: 28px;
+        height: 28px;
+        display: none;
+      }
+
+      .home-ref li {
+        padding: 10px;
+      }
+
+      .home-ref li:not(:last-child) {
+        border-bottom: 1px solid #d9d9d9;
+      }
+
+      .language-opt-pc {
+        top: 200px;
+        right: 15px;
+      }
+
+      .right-nav .home-ref li a {
+        color: var(--3B3B3B, #fff);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .home-ref li:hover a {
+        color: #0355ce !important;
+      }
+
+      @media (max-width: 1250px) {
+        .logo-wrapper {
+          width: 252px;
+          margin-right: 10px;
+        }
+
+        .search input {
+          width: 150px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .search input {
+          display: none;
+        }
+
+        .btn-more {
+          position: static;
+          transform: none;
+          margin-right: 0;
+          margin-left: auto;
+          margin-top: 10px;
+        }
+
+        .language-opt-pc {
+          display: none !important;
+        }
+
+        .search {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .banner .container {
+          padding-bottom: 30px;
+        }
+
+        .banner p {
+          text-align: center;
+          font-size: 22px;
+        }
+
+        .banner p span {
+          font-size: 38px;
+        }
+
+        .left-nav a {
+          font-size: 14px;
+        }
+
+        .logo-wrapper {
+          width: 125px;
+          padding-right: 15px;
+        }
+
+        .logo {
+          width: 80px;
+          height: 29px;
+        }
+
+        .right-nav {
+          column-gap: unset;
+        }
+
+        .right-nav a {
+          font-size: 14px;
+          padding: 0 10px;
+          line-height: 14px;
+        }
+
+        .right-nav a.register {
+          border-left: 1px solid #fff;
+        }
+
+        .banner-des {
+          text-align: center;
+          font-size: 14px;
+          color: #fff;
+        }
+
+        .banner-img {
+          padding: 0 50px;
+        }
+
+        .btn-more {
+          display: none;
+        }
+
+        .btn-more-mb {
+          display: block;
+        }
+
+        .card {
+          margin: 0 5px;
+        }
+
+        .card-title {
+          font-size: 14px;
+        }
+
+        .card-img {
+          width: 90px;
+          height: 90px;
+        }
+
+        .card-des {
+          font-size: 14px;
+        }
+
+        .footer .container {
+          row-gap: 20px;
+        }
+
+        .footer-category {
+          font-size: 14px;
+        }
+
+        .footer-category li {
+          padding: 0 10px;
+        }
+
+        .language-mb {
+          display: flex;
+        }
+
+        .language {
+          display: none;
+        }
+
+        .user {
+          font-size: 14px;
+        }
+
+        .avatar {
+          width: 25px;
+          height: 25px;
+        }
+
+        .log-out {
+          display: none;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .banner p span {
+          font-size: 34px;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .ref li {
+          font-size: 16px;
+        }
+
+        .ref li a {
+          padding: 0;
+          justify-content: center;
+        }
+        .tt-wrapper .col:first-child {
+          padding-left: 0;
+        }
+
+        .tt-wrapper .col:last-child {
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .tt-wrapper .col:first-child {
+          display: none;
+        }
+
+        .tt-wrapper .col:last-child {
+          border-left: none;
+          padding-left: 0;
+        }
+
+        .user {
+          display: none;
+        }
+
+        .log-out {
+          display: none;
+        }
+
+        .language {
+          display: none;
+        }
+
+        .language-mb {
+          display: flex;
+        }
+
+        .tt-wrapper .row {
+          padding: 0 10px;
+        }
+
+        .menu-mb {
+          display: block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .logo-wrapper {
+          width: 125px;
+          height: 45px;
+        }
+
+        .nav {
+          height: 73px;
+        }
+
+        .tt-wrapper {
+          margin-top: 80px;
+        }
+
+        .tbl-user {
+          border: none;
+          padding: 0;
+        }
+
+        .profile-slider {
+          border: none;
+        }
+
+        .sign-in{
+          width: 150px;
+          font-size: 16px;
+        }
+      }
+
+      .thanks {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f3f3f3;
+      }
+
+      .thanks h3 {
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .sign-in {
+        display: block;
+        background-color: #f3f3f3;
+        width: 220px;
+        height: 50px;
+        border-radius: 25px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        transition: background-color 0.3s; /
+      }
+
+      .sign-in:hover {
+        background-color: #999; /* Darker grey on hover */
+        cursor: pointer;
+        color: #fff;
+      }
+
+      @media (max-width: 576px){
+        .sign-in{
+          width: 150px;
+          font-size: 16px;
+        }
+      }
+
+      .footer {
+        position: relative;
+        width: 100%;
+        min-height: 136px;
+        background: var(--d9d9d9, #d9d9d9);
+        padding: 20px;
+      }
+
+      .footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-category {
+        display: flex;
+        color: var(--3B3B3B, #3c3c3c);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+
+      .footer-category li {
+        padding: 0 15px;
+      }
+
+      .footer-category li a:hover {
+        color: #0355ce;
+      }
+
+      .footer-category li:not(:last-child) {
+        border-right: 1px solid #3c3c3c;
+      }
+
+      .footer-category li:first-child {
+        padding-left: 0;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        column-gap: 15px;
+      }
+    </style>
+    <div class="nav">
+      <div class="left-nav">
+        <div class="logo-wrapper">
+          <img class="logo" src="./images/logo-vtcid.png" alt="" />
+        </div>
+        <!-- <a href="">Dịch vụ</a> -->
+      </div>
+      <div class="right-nav">
+        <!-- html da dang nhap -->
+        <div class="user">
+          <div class="avatar"></div>
+          Nickname
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="9"
+            viewBox="0 0 14 9"
+            fill="none"
+          >
+            <path
+              d="M7.40727 7.94746L13.381 1.67784C13.4807 1.57322 13.5364 1.43424 13.5364 1.28971C13.5364 1.14518 13.4807 1.0062 13.381 0.901587L13.3743 0.894836C13.3259 0.843946 13.2677 0.803425 13.2032 0.775734C13.1387 0.748044 13.0693 0.733764 12.9991 0.733764C12.9289 0.733764 12.8594 0.748043 12.7949 0.775734C12.7304 0.803425 12.6722 0.843946 12.6239 0.894836L6.99889 6.79884L1.37615 0.894835C1.3278 0.843945 1.26961 0.803424 1.20511 0.775733C1.14061 0.748042 1.07115 0.733763 1.00096 0.733763C0.930766 0.733763 0.861307 0.748042 0.796807 0.775733C0.732308 0.803424 0.674116 0.843945 0.62577 0.894835L0.61902 0.901585C0.519294 1.0062 0.463662 1.14518 0.463662 1.28971C0.463662 1.43424 0.519294 1.57322 0.61902 1.67783L6.59277 7.94746C6.6453 8.0026 6.70849 8.0465 6.77849 8.07649C6.8485 8.10648 6.92386 8.12195 7.00002 8.12195C7.07618 8.12195 7.15154 8.10648 7.22155 8.07649C7.29155 8.0465 7.35474 8.0026 7.40727 7.94746Z"
+              fill="#D9D9D9"
+            ></path>
+          </svg>
+          <ul class="home-ref">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Đăng xuất</a></li>
+          </ul>
+        </div>
+        <!-- <a href class="log-out">Thoát</a> -->
+        <!-- end html da dang nhap -->
+
+        <!-- <a class="sign-in" href>Đăng nhập</a>
+          <a class="register" href>Đăng ký</a> -->
+        <div class="search">
+          <input type="text" placeholder="Tìm kiếm" />
+          <a href=""><img src="./images/search.png" /></a>
+        </div>
+
+        <a class="language">
+          <img src="./images/VNflag.png" />
+          Tiếng Việt
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="9"
+            viewBox="0 0 14 9"
+            fill="none"
+          >
+            <path
+              d="M7.40727 7.94746L13.381 1.67784C13.4807 1.57322 13.5364 1.43424 13.5364 1.28971C13.5364 1.14518 13.4807 1.0062 13.381 0.901587L13.3743 0.894836C13.3259 0.843946 13.2677 0.803425 13.2032 0.775734C13.1387 0.748044 13.0693 0.733764 12.9991 0.733764C12.9289 0.733764 12.8594 0.748043 12.7949 0.775734C12.7304 0.803425 12.6722 0.843946 12.6239 0.894836L6.99889 6.79884L1.37615 0.894835C1.3278 0.843945 1.26961 0.803424 1.20511 0.775733C1.14061 0.748042 1.07115 0.733763 1.00096 0.733763C0.930766 0.733763 0.861307 0.748042 0.796807 0.775733C0.732308 0.803424 0.674116 0.843945 0.62577 0.894835L0.61902 0.901585C0.519294 1.0062 0.463662 1.14518 0.463662 1.28971C0.463662 1.43424 0.519294 1.57322 0.61902 1.67783L6.59277 7.94746C6.6453 8.0026 6.70849 8.0465 6.77849 8.07649C6.8485 8.10648 6.92386 8.12195 7.00002 8.12195C7.07618 8.12195 7.15154 8.10648 7.22155 8.07649C7.29155 8.0465 7.35474 8.0026 7.40727 7.94746Z"
+              fill="#D9D9D9"
+            ></path>
+          </svg>
+        </a>
+
+        <ul class="language-opt-pc">
+          <li>
+            <a href=""><img src="./images/UKflag.png" alt="" />English</a>
+          </li>
+          <li>
+            <a href=""><img src="./images/VNflag.png" alt="" />Tiếng Việt</a>
+          </li>
+        </ul>
+        <img src="./images/menu-mb.png" class="menu-mb" alt="" />
+        <ul class="ref-mb">
+          <li class="tablinks-mb active" onclick="openTabMb(event, 'tab-1')">
+            Thông tin tài khoản
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-2')">
+            Thông tin cá nhân
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-3')">
+            Bảo mật tài khoản
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-4')">
+            Thanh toán và dịch vụ
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-5')">
+            Điều khoản sử dụng
+          </li>
+          <li>Đăng xuất</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 150px; max-width: 900px">
+      <div class="thanks">
+        <div>
+          <h3>THANK YOU</h3>
+          <p>Your email address has been verified.</p>
+        </div>
+
+        <a class="sign-in">Đăng nhập ngay</a>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".language-mb").click(() => $(".language-opt").toggle());
+        $(".language").click(() => $(".language-opt-pc").toggle());
+        $(".menu-mb").click(() => $(".ref-mb").toggle());
+
+        $(".user").click(() => $(".home-ref").toggle());
+
+        $(".toggle-password").click(function () {
+          var input = $($(this).parent().find("input")[0]);
+          if (input.attr("type") == "password") {
+            input.attr("type", "text");
+            $(this).attr("src", "./images/hidden.png");
+          } else {
+            input.attr("type", "password");
+            $(this).attr("src", "./images/display.png");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

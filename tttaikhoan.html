@@ -1,0 +1,3282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      @font-face {
+        font-family: "BalooTamma2";
+        src: url(./fonts/BalooTamma2-Regular.ttf);
+      }
+
+      * {
+        font-family: "BalooTamma2";
+      }
+
+      .banner {
+        width: 100%;
+        min-height: 695px;
+        height: auto;
+        background: linear-gradient(to bottom, #0355ce, #1eb4e3);
+      }
+
+      .nav {
+        position: absolute;
+        top: 25px;
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .nav a {
+        color: #fff;
+        font-style: normal;
+      }
+
+      .left-nav {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .left-nav a {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .right-nav {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex: 1;
+        column-gap: 30px;
+        padding-right: 20px;
+      }
+
+      .right-nav a {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+      }
+
+      .search input {
+        width: 233px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      .search img {
+        vertical-align: middle;
+      }
+
+      .right-nav input::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: normal;
+        color: #fff;
+      }
+
+      .logo-wrapper {
+        height: 100%;
+        width: 396px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        background-color: #0355ce;
+        display: flex;
+        padding-right: 30px;
+        justify-content: end;
+        align-items: center;
+        margin-right: 40px;
+      }
+
+      .logo {
+        width: 123px;
+        height: 45px;
+      }
+
+      .language {
+        display: block;
+        font-size: 16px;
+        color: #d9d9d9 !important;
+      }
+
+      .language img {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .banner .container {
+        padding-top: 130px;
+        position: relative;
+      }
+
+      .banner .row {
+        display: flex;
+        align-items: center;
+      }
+
+      .banner p {
+        color: #fff;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px;
+        text-transform: uppercase;
+        text-align: right;
+      }
+      .banner p span {
+        font-size: 60px;
+      }
+
+      .banner-des {
+        color: #000;
+        text-align: right;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+      }
+
+      .banner-img {
+        width: 100%;
+        max-width: 506px;
+      }
+
+      .btn-more {
+        position: absolute;
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 47px; /* 150% */
+        width: 195px;
+        height: 47px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.3);
+        text-align: center;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-100%);
+      }
+
+      .benefits {
+        margin-top: 35px;
+        margin-bottom: 45px;
+      }
+
+      .benefits .container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+        display: block;
+        border: none;
+      }
+
+      .card-title {
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .card-img {
+        width: 105px;
+        height: 105px;
+        margin-bottom: 30px;
+      }
+
+      .card-des {
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+      }
+
+      .footer {
+        position: relative;
+        width: 100%;
+        min-height: 136px;
+        background: var(--d9d9d9, #d9d9d9);
+        padding: 20px;
+      }
+
+      .footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .footer-category {
+        display: flex;
+        color: var(--3B3B3B, #3c3c3c);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+
+      .footer-category li {
+        padding: 0 15px;
+      }
+
+      .footer-category li a:hover {
+        color: #0355ce;
+      }
+
+      .footer-category li:not(:last-child) {
+        border-right: 1px solid #3c3c3c;
+      }
+
+      .footer-category li:first-child {
+        padding-left: 0;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        column-gap: 15px;
+      }
+
+      .btn-more-mb {
+        display: none;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #0355ce;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 47px; /* 150% */
+        width: 195px;
+        height: 47px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.7);
+        text-align: center;
+      }
+
+      .language:hover {
+        cursor: pointer;
+      }
+
+      .language-mb {
+        position: absolute;
+        right: 0;
+        bottom: 30px;
+        width: 42px;
+        height: 30px;
+        border-radius: 20px 0px 0px 20px;
+        background: #fff;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 5px;
+        display: none;
+      }
+
+      .language-opt,
+      .language-opt-pc {
+        display: none;
+        position: absolute;
+        top: -5px;
+        right: 10px;
+        transform: translateY(-100%);
+        border-radius: 25px;
+        background: #248ef9;
+        width: max-content;
+        /* shadow2 */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .language-opt li,
+      .language-opt-pc li {
+        padding: 10px 0;
+        margin: 0 10px;
+        color: #fff;
+
+        /* mobile-text3 */
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+
+      .language-opt li:first-child,
+      .language-opt-pc li:first-child {
+        border-bottom: 1px dotted #fff;
+      }
+
+      .language-opt img,
+      .language-opt-pc img {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      .language-opt-pc {
+        top: 158px;
+        right: 15px;
+      }
+
+      .user {
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+        position: relative;
+      }
+
+      .user:hover {
+        cursor: pointer;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        background: url(./images/avatar.jpg) center center/cover no-repeat;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .log-out {
+        width: 110px;
+        height: 40px;
+        border-radius: 30px;
+        background: #248ef9;
+
+        /* shadow2 */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        color: #fff;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 40px !important; /* 150% */
+        text-align: center;
+      }
+
+      @media (max-width: 1250px) {
+        .logo-wrapper {
+          width: 252px;
+          margin-right: 10px;
+        }
+
+        .search input {
+          width: 150px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .search input {
+          display: none;
+        }
+
+        .btn-more {
+          position: static;
+          transform: none;
+          margin-right: 0;
+          margin-left: auto;
+          margin-top: 10px;
+        }
+
+        .language-opt-pc {
+          display: none !important;
+        }
+
+        .search {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .banner .container {
+          padding-bottom: 30px;
+        }
+
+        .banner p {
+          text-align: center;
+          font-size: 22px;
+        }
+
+        .banner p span {
+          font-size: 38px;
+        }
+
+        .left-nav a {
+          font-size: 14px;
+        }
+
+        .logo-wrapper {
+          width: 125px;
+          padding-right: 15px;
+        }
+
+        .logo {
+          width: 80px;
+          height: 29px;
+        }
+
+        .right-nav {
+          column-gap: unset;
+        }
+
+        .right-nav a {
+          font-size: 14px;
+          padding: 0 10px;
+          line-height: 14px;
+        }
+
+        .right-nav a.register {
+          border-left: 1px solid #fff;
+        }
+
+        .banner-des {
+          text-align: center;
+          font-size: 14px;
+          color: #fff;
+        }
+
+        .banner-img {
+          padding: 0 50px;
+        }
+
+        .btn-more {
+          display: none;
+        }
+
+        .btn-more-mb {
+          display: block;
+        }
+
+        .card {
+          margin: 0 5px;
+        }
+
+        .card-title {
+          font-size: 14px;
+        }
+
+        .card-img {
+          width: 90px;
+          height: 90px;
+        }
+
+        .card-des {
+          font-size: 14px;
+        }
+
+        .footer .container {
+          row-gap: 20px;
+        }
+
+        .footer-category {
+          font-size: 14px;
+        }
+
+        .footer-category li {
+          padding: 0 10px;
+        }
+
+        .language-mb {
+          display: flex;
+        }
+
+        .language {
+          display: none;
+        }
+
+        .user {
+          font-size: 14px;
+        }
+
+        .avatar {
+          width: 25px;
+          height: 25px;
+        }
+
+        .log-out {
+          display: none;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .banner p span {
+          font-size: 34px;
+        }
+      }
+
+      /* css tt tai khoan */
+      .tt-wrapper {
+        margin-top: 160px;
+        margin-bottom: 50px;
+        min-height: 700px;
+      }
+
+      .nav {
+        top: 0;
+        height: 121px;
+        background: linear-gradient(206deg, #0355ce 8.59%, #1eb4e3 87.75%);
+      }
+
+      .logo-wrapper {
+        width: 240px;
+        height: 70px;
+      }
+
+      .tt-wrapper .col:first-child {
+        padding: 25px 30px;
+      }
+
+      .tt-wrapper .col:last-child {
+        padding: 25px 120px 25px 60px;
+        border-left: 1px dotted #d9d9d9;
+      }
+
+      .tt-wrapper h3 {
+        color: var(--3B3B3B, #3c3c3c);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px; /* 150% */
+        margin-bottom: 10px;
+      }
+
+      .ref li {
+        width: 100%;
+        max-width: 269px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: rgba(217, 217, 217, 0.3);
+
+        margin-bottom: 10px;
+        color: #3c3c3c;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+      }
+
+      .ref li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 30px;
+        padding-right: 10px;
+      }
+
+      .ref li a:hover {
+        cursor: pointer;
+      }
+
+      .ref li:has(.active) {
+        background-color: #248ef9;
+        color: #fff;
+      }
+
+      .h3-des {
+        color: #939598;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+
+      .divided {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #d9d9d9;
+        margin: 15px 0 25px;
+      }
+
+      .tbl-user {
+        width: 100%;
+        border: 1px solid #248ef9;
+        border-radius: 10px;
+        border-collapse: separate;
+        border-spacing: 0;
+        padding: 0 20px;
+        margin-bottom: 20px;
+      }
+
+      .tbl-user td {
+        padding: 15px 5px;
+        border-bottom: 1px dotted #d9d9d9;
+      }
+
+      .tbl-user tr td:last-child {
+        text-align: center;
+      }
+
+      .tbl-user tr td:last-child svg:hover {
+        cursor: pointer;
+        color: #0355ce;
+      }
+
+      .edit-avt {
+        width: 60px;
+        height: 60px;
+        position: relative;
+      }
+
+      .edit-avt img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .edit-avt:hover {
+        cursor: pointer;
+      }
+
+      .edit-avt svg {
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        background-color: #fff;
+      }
+
+      .profile-slider {
+        border: 1px solid #248ef9;
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 25px 50px;
+      }
+
+      .profile-slider .item {
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .profile-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .profile-name {
+        color: var(--red, #000);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+
+      .profile-slider .owl-dots {
+        display: none;
+      }
+
+      .profile-slider .owl-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: -1;
+      }
+
+      .profile-slider .owl-nav button {
+        font-size: 90px !important;
+      }
+
+      .profile-slider .owl-nav [class*="owl-"]:hover {
+        background-color: #248ef9;
+      }
+
+      .tabcontent {
+        animation: fadeEffect 0.5s; /* Fading effect takes 1 second */
+      }
+
+      /* Go from zero to full opacity */
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .verified {
+        color: #0355ce;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+      }
+
+      .device-img {
+        width: 63px;
+        height: 63px;
+        padding: 10px;
+        border: 1px solid #939598;
+        border-radius: 5px;
+        margin-right: 20px;
+      }
+
+      .checked {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      .tbl-device tr td:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .tbl-device tr td:first-child > div {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+
+      .device-info {
+        text-align: left;
+      }
+
+      .list-btn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: end;
+        gap: 10px;
+      }
+
+      .list-btn a {
+        display: block;
+        width: 111px;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 5px;
+        background: #fff;
+        transition: background 200ms ease, border-color 200ms ease;
+      }
+
+      .list-btn li:first-child a {
+        border: 1px solid #d02828;
+        color: #d02828;
+      }
+
+      .list-btn li:first-child a:hover {
+        background: #d02828;
+        color: #fff;
+      }
+
+      .list-btn li:last-child a {
+        border: 1px solid #248ef9;
+        color: #248ef9;
+      }
+
+      .list-btn li:last-child a:hover {
+        background: #248ef9;
+        color: #fff;
+      }
+
+      .menu-mb {
+        width: 28px;
+        height: 28px;
+        display: none;
+      }
+
+      .menu-mb:hover {
+        cursor: pointer;
+      }
+
+      .right-nav {
+        position: relative;
+      }
+      .ref-mb {
+        position: absolute;
+        top: 40px;
+        border-radius: 25px;
+        background: #248ef9;
+
+        /* shadow2 */
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        display: none;
+      }
+
+      .ref-mb li {
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 10px 0;
+        margin: 0 15px;
+        text-align: right;
+        border-bottom: 1px dotted #fff;
+      }
+
+      .ref-mb li.active {
+        color: #000;
+      }
+
+      .home-ref {
+        position: absolute;
+        border-radius: 5px;
+        background: #248ef9;
+        min-width: 189px;
+        top: 50px;
+        right: 0;
+        display: none;
+      }
+
+      .home-ref li {
+        padding: 10px;
+      }
+
+      .home-ref li:not(:last-child) {
+        border-bottom: 1px solid #d9d9d9;
+      }
+
+      .right-nav .home-ref li a {
+        color: var(--3B3B3B, #fff);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      .home-ref li:hover a {
+        color: #0355ce !important;
+      }
+
+      @media (max-width: 1200px) {
+        .ref li {
+          font-size: 16px;
+        }
+
+        .ref li a {
+          padding: 0;
+          justify-content: center;
+        }
+        .tt-wrapper .col:first-child {
+          padding-left: 0;
+        }
+
+        .tt-wrapper .col:last-child {
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .tt-wrapper .col:first-child {
+          display: none;
+        }
+
+        .tt-wrapper .col:last-child {
+          border-left: none;
+          padding-left: 0;
+        }
+
+        .user {
+          display: none;
+        }
+
+        .log-out {
+          display: none;
+        }
+
+        .language {
+          display: none;
+        }
+
+        .language-mb {
+          display: flex;
+        }
+
+        .tt-wrapper .row {
+          padding: 0 10px;
+        }
+
+        .menu-mb {
+          display: block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .logo-wrapper {
+          width: 125px;
+          height: 45px;
+        }
+
+        .nav {
+          height: 73px;
+        }
+
+        .tt-wrapper {
+          margin-top: 80px;
+        }
+
+        .tbl-user {
+          border: none;
+          padding: 0;
+        }
+
+        .profile-slider {
+          border: none;
+        }
+      }
+    </style>
+
+    <div class="nav">
+      <div class="left-nav">
+        <div class="logo-wrapper">
+          <img class="logo" src="./images/logo-vtcid.png" alt="" />
+        </div>
+        <a href>Dịch vụ</a>
+      </div>
+      <div class="right-nav">
+        <!-- html da dang nhap -->
+        <div class="user">
+          <div class="avatar"></div>
+          Nickname
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="9"
+            viewBox="0 0 14 9"
+            fill="none"
+          >
+            <path
+              d="M7.40727 7.94746L13.381 1.67784C13.4807 1.57322 13.5364 1.43424 13.5364 1.28971C13.5364 1.14518 13.4807 1.0062 13.381 0.901587L13.3743 0.894836C13.3259 0.843946 13.2677 0.803425 13.2032 0.775734C13.1387 0.748044 13.0693 0.733764 12.9991 0.733764C12.9289 0.733764 12.8594 0.748043 12.7949 0.775734C12.7304 0.803425 12.6722 0.843946 12.6239 0.894836L6.99889 6.79884L1.37615 0.894835C1.3278 0.843945 1.26961 0.803424 1.20511 0.775733C1.14061 0.748042 1.07115 0.733763 1.00096 0.733763C0.930766 0.733763 0.861307 0.748042 0.796807 0.775733C0.732308 0.803424 0.674116 0.843945 0.62577 0.894835L0.61902 0.901585C0.519294 1.0062 0.463662 1.14518 0.463662 1.28971C0.463662 1.43424 0.519294 1.57322 0.61902 1.67783L6.59277 7.94746C6.6453 8.0026 6.70849 8.0465 6.77849 8.07649C6.8485 8.10648 6.92386 8.12195 7.00002 8.12195C7.07618 8.12195 7.15154 8.10648 7.22155 8.07649C7.29155 8.0465 7.35474 8.0026 7.40727 7.94746Z"
+              fill="#D9D9D9"
+            ></path>
+          </svg>
+          <ul class="home-ref">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Đăng xuất</a></li>
+          </ul>
+        </div>
+        <!-- <a href class="log-out">Thoát</a> -->
+        <!-- end html da dang nhap -->
+
+        <!-- <a class="sign-in" href>Đăng nhập</a>
+        <a class="register" href>Đăng ký</a> -->
+        <div class="search">
+          <input type="text" placeholder="Tìm kiếm" />
+          <a href><img src="./images/search.png" /></a>
+        </div>
+
+        <a class="language">
+          <img src="./images/VNflag.png" />
+          Tiếng Việt
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="9"
+            viewBox="0 0 14 9"
+            fill="none"
+          >
+            <path
+              d="M7.40727 7.94746L13.381 1.67784C13.4807 1.57322 13.5364 1.43424 13.5364 1.28971C13.5364 1.14518 13.4807 1.0062 13.381 0.901587L13.3743 0.894836C13.3259 0.843946 13.2677 0.803425 13.2032 0.775734C13.1387 0.748044 13.0693 0.733764 12.9991 0.733764C12.9289 0.733764 12.8594 0.748043 12.7949 0.775734C12.7304 0.803425 12.6722 0.843946 12.6239 0.894836L6.99889 6.79884L1.37615 0.894835C1.3278 0.843945 1.26961 0.803424 1.20511 0.775733C1.14061 0.748042 1.07115 0.733763 1.00096 0.733763C0.930766 0.733763 0.861307 0.748042 0.796807 0.775733C0.732308 0.803424 0.674116 0.843945 0.62577 0.894835L0.61902 0.901585C0.519294 1.0062 0.463662 1.14518 0.463662 1.28971C0.463662 1.43424 0.519294 1.57322 0.61902 1.67783L6.59277 7.94746C6.6453 8.0026 6.70849 8.0465 6.77849 8.07649C6.8485 8.10648 6.92386 8.12195 7.00002 8.12195C7.07618 8.12195 7.15154 8.10648 7.22155 8.07649C7.29155 8.0465 7.35474 8.0026 7.40727 7.94746Z"
+              fill="#D9D9D9"
+            />
+          </svg>
+        </a>
+
+        <ul class="language-opt-pc">
+          <li>
+            <a href=""><img src="./images/UKflag.png" alt="" />English</a>
+          </li>
+          <li>
+            <a href=""><img src="./images/VNflag.png" alt="" />Tiếng Việt</a>
+          </li>
+        </ul>
+        <img src="./images/menu-mb.png" class="menu-mb" alt="" />
+        <ul class="ref-mb">
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-1')">
+            Thông tin tài khoản
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-2')">
+            Thông tin cá nhân
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-3')">
+            Bảo mật tài khoản
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-4')">
+            Thanh toán và dịch vụ
+          </li>
+          <li class="tablinks-mb" onclick="openTabMb(event, 'tab-5')">
+            Điều khoản sử dụng
+          </li>
+          <li>Đăng xuất</li>
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="banner">
+      <div class="container">
+        <div class="row" style="position: relative;">
+          <div class="col-lg-6 col-md-6">
+            <p><span>Tài khoản</span> của bạn</p>
+            <p>dành cho <span>tất cả dịch vụ</span></p>
+            <p style="line-height: 40px;">của VTC</p>
+            <div class="banner-des">Chỉ cần một tài khoản và mật khẩu</br>
+              bạn có thể truy cập vào tất cả dịch vụ của VTC</div>
+            <a class="btn-more" href>Tìm hiểu thêm</a>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <img class="banner-img" src="./images/banner-img.png" />
+          </div>
+        </div>
+        <a href class="btn-more-mb">Tìm hiểu thêm</a>
+      </div>
+    </div> -->
+
+    <!-- <div class="benefits">
+      <div class="container">
+        <div class="card">
+          <div class="card-title">1 tài khoản</div>
+          <img src="./images/bnf1.png"" alt="" class="card-img">
+          <div class="card-des">
+            Tương tác 2 chiều: nhắn tin, gọi điện tới 100% khách hàng
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Nhanh gọn</div>
+          <img src="./images/bnf2.png"" alt="" class="card-img">
+          <div class="card-des">
+            Xây dựng nội dung và tiếp cận 100% người quan tâm.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">Chất lượng</div>
+          <img src="./images/bnf3.png"" alt="" class="card-img">
+          <div class="card-des">
+            Tăng doanh số mua lại và thu hút khách hàng tự nhiên.
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="tt-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col col-lg-3">
+            <h3 style="padding-left: 30px">TÀI KHOẢN</h3>
+            <div id="tabs">
+              <ul class="ref">
+                <li>
+                  <a
+                    class="tablinks"
+                    onclick="openTab(event, 'tab-1')"
+                    id="defaultOpen"
+                    >Thông tin cá nhân</a
+                  >
+                </li>
+                <li>
+                  <a class="tablinks" onclick="openTab(event, 'tab-2')"
+                    >Bảo mật tài khoản</a
+                  >
+                </li>
+                <li>
+                  <a class="tablinks" onclick="openTab(event, 'tab-3')"
+                    >Thanh toán và dịch vụ</a
+                  >
+                </li>
+                <li>
+                  <a class="tablinks" onclick="openTab(event, 'tab-4')"
+                    >Điều khoản sử dụng</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div id="tab-1" class="tabcontent">
+              <h3>THÔNG TIN CÁ NHÂN</h3>
+              <span class="h3-des"
+                >Thông tin về bạn và các hồ sơ trên các dịch vụ của VTC</span
+              >
+
+              <div class="divided"></div>
+              <h3>Thông tin cơ bản</h3>
+              <table class="tbl-user">
+                <tr>
+                  <td>Tên đăng nhập</td>
+                  <td>user_name</td>
+                  <td>
+                    <div
+                      class="edit-avt"
+                      data-bs-toggle="modal"
+                      data-bs-target="#popUp1"
+                    >
+                      <img src="./images/avatar.jpg" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                      >
+                        <path
+                          d="M13.2222 5.44445H13.2333M8.77778 18.7778H4.33334C3.44928 18.7778 2.60143 18.4266 1.97631 17.8015C1.35119 17.1764 1 16.3285 1 15.4445V4.33334C1 3.44928 1.35119 2.60143 1.97631 1.97631C2.60143 1.35119 3.44928 1 4.33334 1H15.4445C16.3285 1 17.1764 1.35119 17.8015 1.97631C18.4266 2.60143 18.7778 3.44928 18.7778 4.33334V8.77778"
+                          stroke="#3C3C3C"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M1 13.2223L5.44445 8.77786C6.47556 7.78564 7.74667 7.78564 8.77778 8.77786L12.1111 12.1112L13.2222 11.0001C13.5667 10.669 13.9378 10.4479 14.3189 10.3379M17.0222 13.9001C17.2389 13.6834 17.4962 13.5115 17.7793 13.3943C18.0624 13.277 18.3658 13.2166 18.6722 13.2166C18.9787 13.2166 19.2821 13.277 19.5652 13.3943C19.8483 13.5115 20.1056 13.6834 20.3222 13.9001C20.5389 14.1168 20.7108 14.374 20.8281 14.6571C20.9453 14.9402 21.0057 15.2437 21.0057 15.5501C21.0057 15.8565 20.9453 16.16 20.8281 16.4431C20.7108 16.7262 20.5389 16.9834 20.3222 17.2001L16.5556 21.0001H13.2222V17.6668L17.0222 13.9001Z"
+                          stroke="#3C3C3C"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Họ và tên</td>
+                  <td>Nguyễn Văn A</td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Địa chỉ</td>
+                  <td>23 Lạc Trung, quận Hai Bà Trưng, Hà Nội</td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Giới tính</td>
+                  <td>Nam</td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ngày sinh</td>
+                  <td>29/02/2024</td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Số điện thoại</td>
+                  <td>
+                    0123456789
+                    <span class="verified" style="margin-left: 100px"
+                      >Đã xác thực</span
+                    >
+                  </td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>my_email@gmail.com</td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+              </table>
+
+              <h3>
+                Hồ sơ của bạn
+                <span style="font-size: 16px; font-weight: normal"
+                  >(Các hồ sơ khác nhau của bạn xuất hiện trong các dịch vụ của
+                  VTC)</span
+                >
+              </h3>
+
+              <div class="profile-slider owl-carousel owl-theme">
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+                <div class="item">
+                  <div class="profile-img">
+                    <img src="./images/avatar.jpg" />
+                  </div>
+                  <div class="profile-name">profile_name_1</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="tab-2" class="tabcontent">
+              <h3>BẢO MẬT TÀI KHOẢN</h3>
+              <span class="h3-des"
+                >Bạn nên cập nhật thông tin này để đảm bảo lúc nào cũng truy cập
+                được vào tài khoản VTC của mình</span
+              >
+
+              <div class="divided"></div>
+
+              <table class="tbl-user">
+                <tr>
+                  <td>Xác minh 2 bước</td>
+                  <td></td>
+                  <td><span class="verified">Đang bật</span></td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mật khẩu</td>
+                  <td>********</td>
+                  <td></td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Số điện thoại đã xác thực</td>
+                  <td>0123456789</td>
+                  <td><span class="verified">Đang bật</span></td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email đã xác thực</td>
+                  <td></td>
+                  <td><span class="verified">Chưa thiết lập</span></td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+                <tr>
+                  <td>OTP App</td>
+                  <td></td>
+                  <td><span class="verified">Chưa thiết lập</span></td>
+                  <td>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M16.42 10.0002L9.34333 17.2727C9.28507 17.3313 9.23901 17.4009 9.20781 17.4775C9.17662 17.554 9.16091 17.6359 9.16159 17.7186C9.16228 17.8012 9.17935 17.8829 9.21181 17.9589C9.24427 18.0349 9.29148 18.1037 9.35071 18.1613C9.40994 18.219 9.48001 18.2643 9.55687 18.2946C9.63373 18.325 9.71584 18.3398 9.79847 18.3383C9.88109 18.3367 9.96259 18.3187 10.0382 18.2855C10.1139 18.2522 10.1822 18.2042 10.2392 18.1444L17.7392 10.4361C17.8527 10.3194 17.9162 10.163 17.9162 10.0002C17.9162 9.83745 17.8527 9.68109 17.7392 9.56441L10.2392 1.85607C10.1822 1.79623 10.1139 1.74828 10.0382 1.71501C9.96259 1.68173 9.8811 1.66379 9.79847 1.66221C9.71585 1.66064 9.63373 1.67547 9.55687 1.70584C9.48001 1.73621 9.40994 1.78153 9.35071 1.83916C9.29149 1.89679 9.24427 1.96559 9.21181 2.04159C9.17935 2.11759 9.16228 2.19927 9.16159 2.28191C9.16091 2.36455 9.17662 2.4465 9.20781 2.52302C9.23901 2.59955 9.28507 2.66913 9.34333 2.72774L16.42 10.0002Z"
+                        fill="#939598"
+                      />
+                    </svg>
+                  </td>
+                </tr>
+              </table>
+
+              <h3>
+                Các thiệt bị của bạn
+                <span style="font-size: 16px; font-weight: normal"
+                  >(Các thiết bị bạn đã đăng nhập gần nhất)</span
+                >
+              </h3>
+
+              <table class="tbl-user tbl-device">
+                <tr>
+                  <td>
+                    <div>
+                      <img class="device-img" src="./images/pc.png" />
+                      <div class="device-info">
+                        <div>Windows - HongLab</div>
+                        <div>Hà Nội, Việt Nam</div>
+                        <div>
+                          <img class="checked" src="images/checked.png" />Phiên
+                          bản hoạt động hiện tại
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="list-btn">
+                      <li>
+                        <a href>Xóa tin cậy</a>
+                      </li>
+                      <li>
+                        <a href>Đăng xuất</a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <img class="device-img" src="./images/android.png" />
+                      <div class="device-info">
+                        <div>Windows - HongLab</div>
+                        <div>Hà Nội, Việt Nam</div>
+                        <div>
+                          <img class="checked" src="images/checked.png" />Phiên
+                          bản hoạt động hiện tại
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="list-btn">
+                      <li>
+                        <a href>Xóa tin cậy</a>
+                      </li>
+                      <li>
+                        <a href>Đăng xuất</a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div>
+                      <img class="device-img" src="./images/ios.png" />
+                      <div class="device-info">
+                        <div>Windows - HongLab</div>
+                        <div>Hà Nội, Việt Nam</div>
+                        <div>
+                          <img class="checked" src="images/checked.png" />Phiên
+                          bản hoạt động hiện tại
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="list-btn">
+                      <li>
+                        <a href>Xóa tin cậy</a>
+                      </li>
+                      <li>
+                        <a href>Đăng xuất</a>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="justify-content: center">
+                    <a
+                      href
+                      style="
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        color: #0355ce;
+                      "
+                      >Xem thêm thiết bị</a
+                    >
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div id="tab-3" class="tabcontent">tab2</div>
+
+            <div id="tab-4" class="tabcontent">tab2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <ul class="footer-category">
+          <li><a href>Giới thiệu</a></li>
+          <li><a href>Điều khoản</a></li>
+          <li><a href>Hướng dẫn</a></li>
+          <li><a href>Liên hệ</a></li>
+        </ul>
+        <div class="footer-logo">
+          <a href><img src="./images/facebook.png" /></a>
+          <a href><img src="./images/insta.png" /></a>
+          <a href><img src="./images/youtube.png" /></a>
+        </div>
+
+        <div class="language-mb">
+          <img src="./images/flag.png" />
+          <ul class="language-opt">
+            <li>
+              <a href><img src="./images/UKflag.png" alt="" />English</a>
+            </li>
+            <li>
+              <a href><img src="./images/VNflag.png" alt="" />Tiếng Việt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* modal */
+
+      .modal-content {
+        border-radius: 20px;
+      }
+
+      .modal-header {
+        position: relative;
+        justify-content: center;
+        border-style: dotted;
+      }
+
+      .modal-dialog {
+        width: 100%;
+        max-width: 530px;
+      }
+
+      .modal-title {
+        color: #0355ce;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .modal-header .btn-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+      .modal-header .btn-close:focus {
+        outline: none;
+      }
+
+      .pu-username {
+        color: var(--3B3B3B, #3c3c3c);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .pu-label {
+        display: block;
+        color: #939598;
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto 6px;
+      }
+
+      .pu-input {
+        display: block;
+        width: 100%;
+        height: 55px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        outline: none;
+        background: #f1f1f1;
+        color: var(--3B3B3B, #3c3c3c);
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 150% */
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto 15px;
+        border: none;
+      }
+
+      .pu-btn {
+        display: block;
+        max-width: 268px;
+        width: 100%;
+        height: 55px;
+        border-radius: 87px;
+        background: var(--cyan, #248ef9);
+        color: var(--white, #fff);
+        text-align: center;
+        line-height: 55px;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        margin: 30px auto;
+      }
+
+      .change-avt {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+
+      .change-avt img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .change-avt .custom-file-upload {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      input[type="file"] {
+        display: none;
+      }
+
+      .custom-file-upload {
+        color: var(--blue, #0355ce);
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 31px; /* 150% */
+        border-radius: 87px;
+        background: rgba(255, 255, 255, 0.85);
+        width: 108px;
+        height: 31px;
+        text-align: center;
+      }
+
+      .modal-title img {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        border-radius: 5px;
+      }
+
+      .activities {
+        padding: 0 50px;
+      }
+
+      .activities li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 30px;
+        border-bottom: 1px dotted #d9d9d9;
+      }
+
+      .activities .btn-del {
+        width: 50px;
+        height: 24px;
+        border-radius: 5px;
+        background: #d02828;
+        color: #fff;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        text-align: center;
+      }
+
+      .receive-notice {
+        color: #939598;
+
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 150% */
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+      }
+
+      .receive-notice img {
+        vertical-align: middle;
+      }
+
+      .methods {
+        width: 100%;
+        max-width: 370px;
+        margin: 20px auto;
+      }
+
+      .methods a:not(:last-child) {
+        border-bottom: 1px dotted #3c3c3c;
+      }
+
+      .methods a {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+      }
+
+      .methods a img {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .btn-back {
+        color: #0355ce;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px;
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      .warning {
+        display: block;
+        color: var(--red, #d02828);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+      }
+
+      .warning img {
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+
+      .qr-code {
+        display: block;
+        width: 192px;
+        height: 192px;
+        margin: 0 auto;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 50px;
+        top: 50px;
+      }
+    </style>
+
+    <!-- popup thay doi thong tin user -->
+
+    <div
+      class="modal fade"
+      id="popUp1"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Thay đổi thông tin cá nhân
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="pu-username">user-name</div>
+            <label for="username" class="pu-label">Họ và tên</label>
+            <input
+              type="text"
+              id="username"
+              class="pu-input"
+              placeholder="Nhập họ và tên"
+            />
+
+            <label for="gender" class="pu-label">Giới tính</label>
+            <select name="gender" id="gender" class="pu-input">
+              <option value="male">male</option>
+              <option value="female">female</option>
+            </select>
+
+            <label for="birthday" class="pu-label">Ngày sinh</label>
+            <input type="date" id="birthday" class="pu-input" />
+
+            <label for="address" class="pu-label">Địa chỉ</label>
+            <input
+              type="text"
+              id="address"
+              class="pu-input"
+              placeholder="Nhập địa chỉ"
+            />
+
+            <a class="pu-btn">Cập nhật</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thay doi avatar -->
+
+    <div
+      class="modal fade"
+      id="popUp2"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Thay đổi ảnh đại diện
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Ảnh hồ sơ giúp người khác nhận ra bạn và cũng giúp bạn nhận biết
+              được rằng mình đã đăng nhập vào tài khoản.
+            </p>
+
+            <div class="change-avt">
+              <img src="./images/avatar.jpg" />
+              <label class="custom-file-upload">
+                <input type="file" id="img" name="img" accept="image/*" />
+                Chọn ảnh
+              </label>
+            </div>
+
+            <a class="pu-btn">Cập nhật</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup edit profile -->
+
+    <div
+      class="modal fade"
+      id="popUp3"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              <img src="./images/game.png" /> Game Audition PC
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div
+              class="change-avt"
+              style="width: 200px; height: 200px; margin-bottom: 20px"
+            >
+              <img src="./images/avatar.jpg" />
+              <label class="custom-file-upload">
+                <input type="file" id="img" name="img" accept="image/*" />
+                Chọn ảnh
+              </label>
+            </div>
+            <div class="pu-username">user-name</div>
+            <p
+              style="
+                color: var(--red, #000);
+
+                text-align: left;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px; /* 150% */
+                padding: 0 50px;
+                margin-bottom: 20px;
+              "
+            >
+              Dữ liệu hoạt động
+            </p>
+
+            <ul class="activities">
+              <li>
+                <div>Hoạt động 1</div>
+                <a class="btn-del">Xóa</a>
+              </li>
+              <li>
+                <div>Hoạt động 1</div>
+                <a class="btn-del">Xóa</a>
+              </li>
+              <li>
+                <div>Hoạt động 1</div>
+                <a class="btn-del">Xóa</a>
+              </li>
+              <li>
+                <div>Hoạt động 1</div>
+                <a class="btn-del">Xóa</a>
+              </li>
+              <li>
+                <div>Hoạt động 1</div>
+                <a class="btn-del">Xóa</a>
+              </li>
+            </ul>
+
+            <a class="pu-btn">Cập nhật</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat sdt 1 -->
+
+    <div
+      class="modal fade"
+      id="popUp4"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Cập nhật số điện thoại
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Thêm số điện thoại để tăng tính bảo mật cho tài khoản
+            </p>
+
+            <label for="pnumber" class="pu-label">Số điện thoại</label>
+            <input
+              type="text"
+              id="pnumber"
+              class="pu-input"
+              placeholder="Nhập số điện thoại"
+            />
+
+            <a class="pu-btn">Xác thực</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat sdt 2 -->
+
+    <div
+      class="modal fade"
+      id="popUp5"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Cập nhật số điện thoại
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Bạn có chắc chắn muốn đổi số điện thoại?
+            </p>
+
+            <label for="curNumber" class="pu-label">Số điện thoại</label>
+            <div class="input-wrapper" style="position: relative">
+              <input
+                style="padding-right: 120px"
+                type="text"
+                id="curNumber"
+                class="pu-input"
+              />
+              <span
+                style="
+                  color: #d02828;
+
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 24px; /* 150% */
+                  position: absolute;
+                  right: 50px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                "
+                >Chưa xác thực</span
+              >
+            </div>
+
+            <a class="pu-btn">Xác thực</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat sdt 3  -->
+
+    <div
+      class="modal fade"
+      id="popUp6"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Xác thực số điện thoại
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              0123456789
+            </p>
+
+            <label for="otpNumber" class="pu-label"
+              >Mã xác thực gửi về số điện thoại</label
+            >
+            <input type="password" id="otpNumber" class="pu-input" />
+          </div>
+
+          <a class="pu-btn">Tiếp theo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat sdt 4 -->
+
+    <div
+      class="modal fade"
+      id="popUp7"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Cập nhật số điện thoại
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Bạn có chắc chắn muốn đổi số điện thoại?
+            </p>
+
+            <label for="curNumber" class="pu-label"
+              >Số điện thoại hiện tại</label
+            >
+            <div class="input-wrapper" style="position: relative">
+              <input
+                style="padding-right: 120px; background-color: #939598"
+                type="text"
+                id="curNumber"
+                class="pu-input"
+              />
+              <span
+                style="
+                  color: #fff;
+
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 24px; /* 150% */
+                  position: absolute;
+                  right: 50px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                "
+                >Đã xác thực</span
+              >
+            </div>
+
+            <label for="newNumber" class="pu-label">Số điện thoại mới</label>
+            <input type="text" id="newNumber" class="pu-input" />
+
+            <a class="pu-btn">Cập nhật</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat email 1 -->
+
+    <div
+      class="modal fade"
+      id="popUp8"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cập nhật email</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Thêm email để tăng tính bảo mật cho tài khoản
+            </p>
+
+            <label for="email" class="pu-label">Email</label>
+            <input
+              type="text"
+              id="email"
+              class="pu-input"
+              placeholder="Nhập email"
+            />
+
+            <div class="receive-notice">
+              <img src="./images/checkbox.png" />
+              Đăng ký nhận thông báo từ VTC
+            </div>
+
+            <a class="pu-btn">Xác thực</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat email 2 -->
+    <div
+      class="modal fade"
+      id="popUp9"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cập nhật email</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Bạn có chắc chắn muốn đổi email?
+            </p>
+
+            <label for="curEmail" class="pu-label">Email</label>
+            <div class="input-wrapper" style="position: relative">
+              <input
+                style="padding-right: 120px"
+                type="text"
+                id="curEmail"
+                class="pu-input"
+              />
+              <span
+                style="
+                  color: #d02828;
+
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 24px; /* 150% */
+                  position: absolute;
+                  right: 50px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                "
+                >Chưa xác thực</span
+              >
+            </div>
+
+            <a class="pu-btn">Xác thực</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat email 3 -->
+
+    <div
+      class="modal fade"
+      id="popUp10"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Xác thực email</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              my_email@gmail.com
+            </p>
+
+            <label for="otpEmail" class="pu-label"
+              >Mã xác thực gửi về email</label
+            >
+            <input type="password" id="otpEmail" class="pu-input" />
+          </div>
+
+          <a class="pu-btn">Tiếp theo</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup cap nhat email 4 -->
+
+    <div
+      class="modal fade"
+      id="popUp11"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cập nhật email</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Bạn có chắc chắn muốn đổi email? điện thoại?
+            </p>
+
+            <label for="curEmail" class="pu-label">Email hiện tại</label>
+            <div class="input-wrapper" style="position: relative">
+              <input
+                style="padding-right: 120px; background-color: #939598"
+                type="text"
+                id="curEmail"
+                class="pu-input"
+              />
+              <span
+                style="
+                  color: #fff;
+
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 24px; /* 150% */
+                  position: absolute;
+                  right: 50px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                "
+                >Đã xác thực</span
+              >
+            </div>
+
+            <label for="newEmail" class="pu-label">Email mới</label>
+            <input type="text" id="newEmail" class="pu-input" />
+
+            <a class="pu-btn">Cập nhật</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap xac minh 2buoc -->
+
+    <div
+      class="modal fade"
+      id="popUp12"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Thiết lập xác minh 2 bước
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 60px;
+                padding: 0 20px;
+              "
+            >
+              Bảo vệ tài khoản của bạn bằng tính năng Xác minh 2 bước.<br />
+              Hãy ngăn chặn tin tặc truy cập vào tài khoản của bạn bằng một lớp
+              bảo mật nữa. Khi bạn đăng nhập, tính năng Xác minh 2 bước giúp đảm
+              bảo thông tin cá nhân của bạn luôn ở chế độ riêng tư, an toàn và
+              bảo mật.
+            </p>
+
+            <a class="pu-btn">Bắt đầu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup chon phuong thuc xac thuc -->
+
+    <div
+      class="modal fade"
+      id="popUp13"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Chọn phương thức xác thực
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="methods">
+              <a href=""
+                ><img src="./images/phone.png" alt="" />Mã xác thực về số điện
+                thoại</a
+              >
+              <a href=""
+                ><img src="./images/mail.png" alt="" />Mã xác thực về Email</a
+              >
+              <a href=""
+                ><img src="./images/otp.png" alt="" />Mã xác thực OTP App</a
+              >
+            </div>
+
+            <a href="" class="btn-back" style="margin-bottom: 30px">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M6.72488 10.4525L13.6911 17.09C13.8074 17.2008 13.9618 17.2626 14.1224 17.2626C14.283 17.2626 14.4374 17.2008 14.5536 17.09L14.5611 17.0825C14.6177 17.0287 14.6627 16.9641 14.6935 16.8924C14.7242 16.8207 14.7401 16.7436 14.7401 16.6656C14.7401 16.5876 14.7242 16.5104 14.6935 16.4387C14.6627 16.3671 14.6177 16.3024 14.5611 16.2487L8.00113 9.9987L14.5611 3.7512C14.6177 3.69749 14.6627 3.63283 14.6935 3.56116C14.7242 3.4895 14.7401 3.41232 14.7401 3.33433C14.7401 3.25634 14.7242 3.17916 14.6935 3.10749C14.6627 3.03583 14.6177 2.97117 14.5611 2.91745L14.5536 2.90995C14.4374 2.79915 14.283 2.73733 14.1224 2.73733C13.9618 2.73733 13.8074 2.79915 13.6911 2.90995L6.72488 9.54745C6.66362 9.60582 6.61484 9.67603 6.58152 9.75381C6.54819 9.83159 6.53101 9.91533 6.53101 9.99995C6.53101 10.0846 6.54819 10.1683 6.58152 10.2461C6.61484 10.3239 6.66362 10.3941 6.72488 10.4525Z"
+                  fill="#0355CE"
+                ></path>
+              </svg>
+              Quay lại
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup xac thuc tai khoan -->
+
+    <div
+      class="modal fade"
+      id="popUp14"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Xác thực tài khoản
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: #0355ce;
+
+                text-align: center;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin-bottom: 30px;
+              "
+            >
+              Nickname
+            </p>
+
+            <label for="otpNumber" class="pu-label"
+              >Mã xác thực đã gửi về sđt 0123456789</label
+            >
+            <input type="password" id="otpNumber" class="pu-input" />
+            <small class="warning"
+              ><img src="./images/warning.png" alt="" />Mã xác thực không hợp lệ
+            </small>
+
+            <a
+              style="
+                color: #0355ce;
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px; /* 150% */
+
+                display: block;
+                width: fit-content;
+                margin: 20px auto 50px;
+              "
+              >Thử cách khác?</a
+            >
+
+            <a class="pu-btn">Tiếp theo</a>
+
+            <a href="" class="btn-back" style="margin-bottom: 30px">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+              >
+                <path
+                  d="M6.72488 10.4525L13.6911 17.09C13.8074 17.2008 13.9618 17.2626 14.1224 17.2626C14.283 17.2626 14.4374 17.2008 14.5536 17.09L14.5611 17.0825C14.6177 17.0287 14.6627 16.9641 14.6935 16.8924C14.7242 16.8207 14.7401 16.7436 14.7401 16.6656C14.7401 16.5876 14.7242 16.5104 14.6935 16.4387C14.6627 16.3671 14.6177 16.3024 14.5611 16.2487L8.00113 9.9987L14.5611 3.7512C14.6177 3.69749 14.6627 3.63283 14.6935 3.56116C14.7242 3.4895 14.7401 3.41232 14.7401 3.33433C14.7401 3.25634 14.7242 3.17916 14.6935 3.10749C14.6627 3.03583 14.6177 2.97117 14.5611 2.91745L14.5536 2.90995C14.4374 2.79915 14.283 2.73733 14.1224 2.73733C13.9618 2.73733 13.8074 2.79915 13.6911 2.90995L6.72488 9.54745C6.66362 9.60582 6.61484 9.67603 6.58152 9.75381C6.54819 9.83159 6.53101 9.91533 6.53101 9.99995C6.53101 10.0846 6.54819 10.1683 6.58152 10.2461C6.61484 10.3239 6.66362 10.3941 6.72488 10.4525Z"
+                  fill="#0355CE"
+                ></path>
+              </svg>
+              Quay lại
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup tao mat khau moi -->
+
+    <div
+      class="modal fade"
+      id="popUp15"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Tạo mật khẩu mới</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+                padding: 0 80px;
+              "
+            >
+              Tạo một mật khẩu mạnh có kết hợp của các chữ cái, số và ký hiệu
+            </p>
+
+            <div class="input-wrapper" style="position: relative">
+              <label for="curPassword " class="pu-label">Mật khẩu</label>
+              <input
+                type="password"
+                id="curPassword"
+                class="pu-input"
+                placeholder="Nhập mật khẩu"
+                style="padding-right: 50px"
+              />
+              <img class="toggle-password" src="./images/display.png" />
+            </div>
+
+            <div class="input-wrapper" style="position: relative">
+              <label for="newPassword" class="pu-label">Mật khẩu</label>
+              <input
+                type="password"
+                id="newPassword"
+                class="pu-input"
+                placeholder="Nhập mật khẩu"
+                style="padding-right: 50px"
+              />
+              <img class="toggle-password" src="./images/display.png" />
+            </div>
+
+            <div class="input-wrapper" style="position: relative">
+              <label for="newPassword1 " class="pu-label">Mật khẩu</label>
+              <input
+                type="password"
+                id="newPassword1"
+                class="pu-input"
+                placeholder="Nhập mật khẩu"
+                style="padding-right: 50px"
+              />
+              <img class="toggle-password" src="./images/display.png" />
+              <small class="warning"
+                ><img src="./images/warning.png" alt="" />Mã xác thực không hợp
+                lệ
+              </small>
+            </div>
+
+            <a class="pu-btn">Tiếp theo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap sdt la phuong thuc xac thuc -->
+
+    <div
+      class="modal fade"
+      id="popUp16"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="text-align: center"
+            >
+              Thiết lập số điện thoại là <br />
+              phương thức xác thực tài khoản
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: left;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                padding: 0 20px;
+                margin-bottom: 20px;
+              "
+            >
+              Số điện thoại của bạn sẽ được sử dụng cho các mục đích bảo mật
+              như:
+            </p>
+
+            <ul style="list-style: disc; padding: 0 60px; margin-bottom: 30px">
+              <li style="margin-bottom: 10px">
+                Bảo mật đăng nhập trên thiết bị lạ
+              </li>
+              <li>Quên mật khẩu</li>
+            </ul>
+
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: left;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                padding: 0 20px;
+              "
+            >
+              Số điện thoại nhận OTP:
+              <span style="color: var(--3B3B3B, #0355ce)">0123***789</span>
+            </p>
+
+            <a class="pu-btn">Bắt đầu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap email la phuong thuc xac thuc -->
+
+    <div
+      class="modal fade"
+      id="popUp17"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="text-align: center"
+            >
+              Thiết lập Email là <br />
+              phương thức xác thực tài khoản
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: left;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                padding: 0 20px;
+                margin-bottom: 20px;
+              "
+            >
+              Email của bạn sẽ được sử dụng cho các mục đích bảo mật như:
+            </p>
+
+            <ul style="list-style: disc; padding: 0 60px; margin-bottom: 30px">
+              <li style="margin-bottom: 10px">
+                Bảo mật đăng nhập trên thiết bị lạ
+              </li>
+              <li>Quên mật khẩu</li>
+            </ul>
+
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: left;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                padding: 0 20px;
+              "
+            >
+              Email nhận OTP:
+              <span style="color: var(--3B3B3B, #0355ce)"
+                >my_email@gmail.com</span
+              >
+            </p>
+
+            <a class="pu-btn">Bắt đầu</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap otp app 1 -->
+
+    <div
+      class="modal fade"
+      id="popUp18"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Thiết lập OTP App
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Để tiếp tục, xác thực tài khoản của bạn
+            </p>
+            <div class="input-wrapper" style="position: relative">
+              <label for="password" class="pu-label">Mật khẩu tài khoản</label>
+
+              <input
+                type="password"
+                id="password"
+                class="pu-input"
+                style="padding-right: 50px"
+              />
+
+              <img class="toggle-password" src="./images/display.png" />
+              <small class="warning"
+                ><img src="./images/warning.png" alt="" />Mật khẩu không hợp lệ
+              </small>
+            </div>
+
+            <a class="pu-btn">Tiếp theo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap otp app 2 -->
+
+    <div
+      class="modal fade"
+      id="popUp19"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="text-align: center"
+            >
+              Thiết lập OTP App
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul style="list-style: disc; padding: 0 60px; margin-bottom: 30px">
+              <li style="margin-bottom: 10px">Mở ứng dụng Authenticator App</li>
+              <li style="margin-bottom: 10px">Chọn Thiết lập tài khoản</li>
+              <li>Chọn Quét mã QR</li>
+            </ul>
+
+            <img class="qr-code" src="./images/qr.png" />
+
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px; /* 150% */
+                margin-top: 15px;
+              "
+            >
+              Gặp vấn đề với QR Code?
+            </p>
+
+            <a
+              style="
+                color: #0355ce;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                display: block;
+                width: fit-content;
+                margin: 15px auto;
+              "
+              >Lấy mã thủ công</a
+            >
+            <a class="pu-btn">Tiếp theo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap otp app 3 -->
+    <div
+      class="modal fade"
+      id="popUp20"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="exampleModalLabel"
+              style="text-align: center"
+            >
+              Thiết lập OTP App
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <ul style="list-style: disc; padding: 0 60px; margin-bottom: 30px">
+              <li style="margin-bottom: 10px">Mở ứng dụng Authenticator App</li>
+              <li style="margin-bottom: 10px">Chọn Thiết lập tài khoản</li>
+              <li>Chọn Quét mã QR</li>
+            </ul>
+
+            <input
+              class="pu-input"
+              type="text"
+              value="ABCD-1234-EFGH-5678"
+              style="
+                text-align: center;
+                max-width: 317px;
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+              "
+            />
+
+            <a
+              style="
+                color: #0355ce;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                display: block;
+                width: fit-content;
+                margin: 15px auto;
+              "
+              >Quét mã QR</a
+            >
+            <a class="pu-btn">Tiếp theo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- popup thiet lap otp app 4 -->
+
+    <div
+      class="modal fade"
+      id="popUp21"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Thiết lập OTP App
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p
+              style="
+                color: var(--3B3B3B, #3c3c3c);
+
+                text-align: center;
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 24px;
+                margin-bottom: 30px;
+              "
+            >
+              Nhập mã xác thực 6 số trên ứng dụng Authenticator
+            </p>
+
+            <label for="otp" class="pu-label">Mã xác thực</label>
+            <input type="password" id="otp" class="pu-input" />
+            <small class="warning"
+              ><img src="./images/warning.png" alt="" />Mã xác thực không chính
+              xác
+            </small>
+            <a class="pu-btn">Tiếp theo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+    <script>
+      // tabs
+
+      function openTab(e, tabID) {
+        // Declare all variables
+        let i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabID).style.display = "block";
+        e.currentTarget.className += " active";
+      }
+
+      function openTabMb(e, tabID) {
+        // Declare all variables
+        let i, tabcontent, tablinks;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks-mb");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabID).style.display = "block";
+        e.currentTarget.className += " active";
+
+        document.getElementsByClassName("ref-mb")[0].style.display = "none";
+      }
+
+      document.getElementsByClassName("tablinks-mb")[0].className += " active";
+
+      document.getElementById("defaultOpen").click();
+
+      // slider
+
+      $(".profile-slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+          0: {
+            items: 2,
+          },
+
+          450: {
+            items: 3,
+          },
+          992: {
+            items: 5,
+          },
+        },
+      });
+
+      $(document).ready(function () {
+        $(".language-mb").click(() => $(".language-opt").toggle());
+        $(".language").click(() => $(".language-opt-pc").toggle());
+        $(".menu-mb").click(() => $(".ref-mb").toggle());
+
+        $(".user").click(() => $(".home-ref").toggle());
+
+        $(".toggle-password").click(function () {
+          var input = $($(this).parent().find("input")[0]);
+          if (input.attr("type") == "password") {
+            input.attr("type", "text");
+            $(this).attr("src", "./images/hidden.png");
+          } else {
+            input.attr("type", "password");
+            $(this).attr("src", "./images/display.png");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
